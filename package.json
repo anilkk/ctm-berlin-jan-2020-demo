@@ -1,50 +1,29 @@
 {
-  "name": "ctm-berlin-jan-2020-demo",
+  "name": "pageobjects",
   "version": "1.0.0",
-  "description": "Demos for the CTM Berlin Meetup JAN 2020",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/anilkk/ctm-berlin-jan-2020-demo.git"
-  },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/anilkk/ctm-berlin-jan-2020-demo/issues"
-  },
-  "homepage": "https://github.com/anilkk/ctm-berlin-jan-2020-demo#readme",
-  "dependencies": {
-    "@babel/cli": "^7.7.0",
-    "@babel/plugin-proposal-export-default-from": "^7.5.2",
-    "@babel/preset-env": "^7.7.1",
-    "@babel/register": "^7.7.0",
-    "@types/cucumber": "^4.0.5",
-    "@wdio/cli": "^5.16.0",
-    "@wdio/config": "^5.16.0",
-    "@wdio/cucumber-framework": "^5.16.0",
-    "@wdio/local-runner": "^5.16.1",
-    "@wdio/selenium-standalone-service": "^5.11.0",
-    "@wdio/spec-reporter": "^5.15.2",
-    "@wdio/static-server-service": "^5.14.4",
-    "@wdio/sync": "^5.16.0",
-    "chai": "^4.1.2",
-    "eslint-plugin-wdio": "^5.7.8",
-    "wdio-chromedriver-service": "^5.0.2",
-    "webdriverio": "^5.16.0"
-  },
   "devDependencies": {
-    "@babel/core": "^7.7.0",
-    "babel-jest": "^24.8.0",
-    "chromedriver": "^78.0.1",
-    "eslint": "^6.6.0",
-    "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-plugin-import": "^2.18.0",
-    "http-server": "^0.12.0",
-    "jest": "^24.8.0",
-    "npm-run-all": "^4.1.5"
+    "@wdio/cli": "^5.18.2",
+    "@wdio/local-runner": "^5.18.2",
+    "@wdio/mocha-framework": "^5.16.15",
+    "@wdio/spec-reporter": "^5.16.11",
+    "@wdio/sync": "^5.17.0",
+    "chromedriver": "^79.0.0",
+    "wdio-chromedriver-service": "^5.0.2"
+  },
+  "dependencies": {
+    "@babel/cli": "^7.5.0",
+    "@babel/core": "^7.5.0",
+    "@babel/node": "^7.6.1",
+    "@babel/polyfill": "^7.4.4",
+    "@babel/preset-env": "^7.5.0",
+    "@babel/register": "^7.4.4"
   }
 }

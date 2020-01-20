@@ -20,7 +20,7 @@ exports.config = {
     // directory is where your package.json resides, so `wdio` will be called from there.
     //
     specs: [
-        './test/features/**/*.feature',
+        './test/specs/**/*.js'
     ],
     // Patterns to exclude.
     exclude: [
@@ -42,7 +42,7 @@ exports.config = {
     // and 30 processes will get spawned. The property handles how many capabilities
     // from the same test should run tests.
     //
-    maxInstances: 10,
+    maxInstances: 1,
     //
     // If you have trouble getting all important capabilities together, check out the
     // Sauce Labs platform configurator - a great tool to configure your capabilities:
@@ -52,7 +52,7 @@ exports.config = {
         // maxInstances can get overwritten per capability. So if you have an in-house Selenium
         // grid with only 5 firefox instances available you can make sure that not more than
         // 5 instances get started at a time.
-        maxInstances: 5,
+        // maxInstances: 1,
         //
         browserName: 'chrome',
         // If outputDir is provided WebdriverIO can capture driver session logs
@@ -91,7 +91,7 @@ exports.config = {
     // with `/`, the base url gets prepended, not including the path portion of your baseUrl.
     // If your `url` parameter starts without a scheme or `/` (like `some/path`), the base url
     // gets prepended directly.
-    baseUrl: 'https://iyk3p.csb.app/',
+    baseUrl: 'https://webdriver.io',
     //
     // Default timeout for all waitFor* commands.
     waitforTimeout: 10000,
@@ -115,7 +115,7 @@ exports.config = {
     //
     // Make sure you have the wdio adapter package for the specific framework installed
     // before running any tests.
-    framework: 'cucumber',
+    framework: 'mocha',
     //
     // The number of times to retry the entire specfile when it fails as a whole
     // specFileRetries: 1,
@@ -128,57 +128,10 @@ exports.config = {
     //
     // Options to be passed to Mocha.
     // See the full list at http://mochajs.org/
-    // mochaOpts: {
-    //     ui: 'bdd',
-    //     timeout: 60000
-    // },
-
-    // If you are using Cucumber you need to specify the location of your step
-    // definitions.
-    cucumberOpts: {
-        // <boolean> show full backtrace for errors
-        backtrace: false,
-        // <string[]> module used for processing required features
-        requireModule: ['@babel/register'],
-        // <boolean< Treat ambiguous definitions as errors
-        failAmbiguousDefinitions: true,
-        // <boolean> invoke formatters without executing steps
-        // dryRun: false,
-        // <boolean> abort the run on first failure
-        failFast: false,
-        // <boolean> Enable this config to treat undefined definitions as
-        // warnings
-        ignoreUndefinedDefinitions: false,
-        // <string[]> ("extension:module") require files with the given
-        // EXTENSION after requiring MODULE (repeatable)
-        name: [],
-        // <boolean> hide step definition snippets for pending steps
-        snippets: true,
-        // <boolean> hide source uris
-        source: true,
-        // <string[]> (name) specify the profile to use
-        profile: [],
-        // <string[]> (file/dir) require files before executing features
-        require: [
-            './test/steps/given.js',
-            './test/steps/then.js',
-            './test/steps/when.js',
-            // Or search a (sub)folder for JS files with a wildcard
-            // works since version 1.1 of the wdio-cucumber-framework
-            // './src/**/*.js',
-        ],
-        // <string> specify a custom snippet syntax
-        snippetSyntax: undefined,
-        // <boolean> fail if there are any undefined or pending steps
-        strict: true,
-        // <string> (expression) only execute the features or scenarios with
-        // tags matching the expression, see
-        // https://docs.cucumber.io/tag-expressions/
-        tagExpression: 'not @Pending',
-        // <boolean> add cucumber tags to feature or scenario name
-        tagsInTitle: false,
-        // <number> timeout for step definitions
-        timeout: 20000,
+    mochaOpts: {
+        ui: 'bdd',
+        require: ['@babel/register'],
+        timeout: 60000
     },
     //
     // =====
@@ -210,16 +163,8 @@ exports.config = {
      * @param {Array.<Object>} capabilities list of capabilities details
      * @param {Array.<String>} specs List of spec file paths that are to be run
      */
-    before: function (capabilities, specs) {
-        /**
-         * Setup the Chai assertion framework
-         */
-        const chai = require('chai');
-
-        global.expect = chai.expect;
-        global.assert = chai.assert;
-        global.should = chai.should();
-    },
+    // before: function (capabilities, specs) {
+    // },
     /**
      * Runs before a WebdriverIO command gets executed.
      * @param {String} commandName hook command name
