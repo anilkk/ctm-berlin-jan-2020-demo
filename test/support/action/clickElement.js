@@ -11,7 +11,9 @@ export default (action, type, selector) => {
      * Element to perform the action on
      * @type {String}
      */
-    const selector2 = (type === 'link') ? `=${selector}` : selector;
+    // const selector2 = (type === 'link') ? `=${selector}` : selector;
+    // for the data-test support
+    const selector2 = `[data-test="${selector}"]`;
 
     /**
      * The method to call on the browser object
