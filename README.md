@@ -1,6 +1,8 @@
 # ctm-berlin-jan-2020-demo
 Demos for the CTM Berlin Meetup JAN 2020
 
+## Presentation slide
+[Slidedeck](https://speakerdeck.com/anilkumar/our-locators-are-fragile-make-them-strong-with-test-data-attributes)
 
 ## dev dependent e2e test demo
 1. [dev application link](https://iyk3p.csb.app/)
